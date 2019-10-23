@@ -1,0 +1,9 @@
+<div>
+    <h1>Home Page</h1>
+    <input type="text" #titlename />
+    {{title}}
+
+    <input type="text" [(ngModel)]="lastname" />
+    {{lastname}}
+    <button (click)="Textchange(titlename.value)">Add</button>
+</div>
