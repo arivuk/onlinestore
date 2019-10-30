@@ -1,1 +1,12 @@
-<p>add-student works!</p>
+<div>
+    <h1>Add Student</h1>
+
+    <div>
+        <p>id: <input type="text" #id /></p>
+        <p>name: <input type="text" #name/></p>
+        <p>mobile: <input type="text" #mobile/></p>
+        <p>address: <input type="text" #address/></p>
+        <button (click)="Add(id.value,name.value,mobile.value,address.value)">Add</button>
+        <button (click)="Cancel()">Cancel</button>
+    </div>
+</div>

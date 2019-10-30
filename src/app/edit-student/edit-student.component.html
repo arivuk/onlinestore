@@ -1,0 +1,11 @@
+<div>
+    <h1>Edit Student</h1>
+
+    <div>
+        <p>id: {{id}}</p>
+        <p>name: <input type="text" #name [value]="name1" /></p>
+        <p>mobile: <input type="text" #mobile  [value]="mobile1"/></p>
+        <p>address: <input type="text" #address  [value]="address1"/></p>
+        <button (click)="Update(name.value,mobile.value,address.value)">Update</button>
+    </div>
+</div>

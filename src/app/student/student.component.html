@@ -8,11 +8,15 @@
         <td>Name</td>
         <td>Mobile</td>
         <td>Address</td>
+        <td>Edit</td>
+        <td>Delete</td>
     </tr>
     <tr *ngFor="let item of lstStudent">
             <td>{{item.id}}</td>
             <td>{{item.name}}</td>
             <td>{{item.mobile}}</td>
             <td>{{item.address}}</td>
+            <td><a routerLink="/EditStudent/{{item.id}}">Edit</a></td>
+            <td><button (click)="Delete(item.id)">Delete</button></td>
         </tr>
 </table>
