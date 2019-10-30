@@ -7,6 +7,7 @@ import { AddStudentComponent } from './add-student/add-student.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { LoginAuthGuard } from './login-auth.guard';
 import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:'EditStudent/:id',  component: EditStudentComponent , canActivate: [LoginAuthGuard]},
   {path:'',  redirectTo: '/Home',pathMatch:'full'},
   {path:'Login',  component: LoginComponent },
+  {path:'User',  component: UserComponent },
   {path:'**', redirectTo: '/Home'}
 ];
 
