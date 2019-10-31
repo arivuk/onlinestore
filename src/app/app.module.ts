@@ -12,8 +12,6 @@ import { StudentComponent } from './student/student.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { LoginComponent } from './login/login.component';
-import { UserComponent } from './user/user.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +20,7 @@ import { UserComponent } from './user/user.component';
     StudentComponent,
     AddStudentComponent,
     EditStudentComponent,
-    LoginComponent,
-    UserComponent
-  ],
+    LoginComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,FormsModule,HttpClientModule

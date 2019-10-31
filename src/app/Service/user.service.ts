@@ -11,4 +11,8 @@ export class UserService {
   getUser(){
     return this.http.get('https://reqres.in/api/users');
   }
+
+  getsingleUser(id: number){
+    return this.http.get('https://reqres.in/api/users/'+id);
+  }
 }
