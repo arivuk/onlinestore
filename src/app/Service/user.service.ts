@@ -9,10 +9,17 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUser(){
-    return this.http.get('https://reqres.in/api/users');
+    return this.http.get('http://dummy.restapiexample.com/api/v1/employees');
   }
 
   getsingleUser(id: number){
-    return this.http.get('https://reqres.in/api/users/'+id);
+    return this.http.get('http://dummy.restapiexample.com/api/v1/employee/'+id);
+  }
+
+  updateuser(id:number,name:string,age:number,salary:number){
+    return this.http.put('http://dummy.restapiexample.com/api/v1/update/'+id,JSON.stringify({name:name,age:age,salary:salary}))
+  }
+  Deleteuser(id:number){
+    return this.http.delete('http://dummy.restapiexample.com/api/v1/delete/'+id)
   }
 }

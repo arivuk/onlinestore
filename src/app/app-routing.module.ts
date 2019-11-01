@@ -7,6 +7,7 @@ import { AddStudentComponent } from './add-student/add-student.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { LoginAuthGuard } from './login-auth.guard';
 import { LoginComponent } from './login/login.component';
+import { UserauthGuard } from './userauth.guard';
 
 
 const routes: Routes = [
@@ -20,7 +21,9 @@ const routes: Routes = [
   {
     path: 'User', loadChildren: () => import('./user-info/user-info.module').then(data => {
       return data.UserInfoModule
-    })
+    }), canActivateChild:[ UserauthGuard ]
+    //arror function without open bracket({) not required to return statement. default it will return
+    //loadChildren: () => import('./user-info/user-info.module').then(data => data.UserInfoModule)
   },
   { path: '**', redirectTo: '/Home' }
 ];

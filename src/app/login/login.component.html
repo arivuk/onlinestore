@@ -1,4 +1,4 @@
 <p>Login</p>
-<p>Username <input type="text" /></p>
-<p>Password <input type="password" /></p>
-<button (click)="Signin()">Login</button>
+<p>Username <input type="text" #username /></p>
+<p>Password <input type="password" #password/></p>
+<button (click)="Signin(username.value,password.value)">Login</button>

@@ -1,14 +1,12 @@
 <h1>Edit User</h1>
 
-<p>Id: {{userinfo.id}}</p>
+<p *ngIf="1==0">Id: {{userinfo.id}}</p>
 <p>
-firstname: <input type="text" [value]="userinfo.first_name" />
+name: <input type="text" #name [value]="userinfo.employee_name" />
 </p><p>
-lastname: <input type="text" value="{{userinfo.last_name}}" />
+age: <input type="text" #age value="{{userinfo.employee_age}}" />
 </p>
 <p>
-    EMail: <input type="text" value="{{userinfo.email}}" />
+   salary: <input type="text" #salary value="{{userinfo.employee_salary}}" />
     </p>
-    <p>
-        Profile Image: <img src="{{userinfo.avatar}}" />
-        </p>
+        <button (click)="Update(name.value,age.value,salary.value)">Update</button>

@@ -13,8 +13,15 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  Signin(){
-    this.login.setLogin();
-this.router.navigate(['/Student'])
+  Signin(username: string, password: string){
+    this.login.Logininfo(username,password).subscribe(data=>{
+      console.log("data",data);
+     localStorage.setItem("Login",JSON.stringify(data));
+      this.login.setLogin(username,JSON.stringify(data));
+    },error=>{
+      console.log("error",error);
+    })
+//     this.login.setLogin();
+// this.router.navigate(['/Student'])
   }
 }

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,12 +8,24 @@ export class LoginService {
 
   loginStatus: boolean;
   loginInformation: any;
-  constructor() { 
-    this.loginInformation={loginStatus:false}
+  constructor(private http: HttpClient) {
+    let userst=localStorage.getItem("Login");
+    console.log(userst);
+    let status='';
+    if(!!userst){
+      status=JSON.parse(userst);
+    } 
+    this.loginInformation={loginStatus: !!status}
+  }
+  Logininfo(username:string,password:string){
+    console.log(username);
+    console.log(password);
+    return this.http.post('https://reqres.in/api/login', {'email': username,'password':password})
   }
 
-  setLogin(){
-    this.loginInformation={ username :' Arivu',emailid:"arivu@green.com",loginStatus: true};
+  setLogin(username: string, status:string){
+     let statu=JSON.parse(status);
+    this.loginInformation={ username :username,emailid:"arivu@green.com",loginStatus: !!statu};
   }
 
   getLogin(){

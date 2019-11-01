@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../Service/user.service';
 
 @Component({
@@ -10,16 +10,26 @@ import { UserService } from '../Service/user.service';
 export class EditUserComponent implements OnInit {
   userid: number;
   userinfo: any;
-  constructor(private actRouter: ActivatedRoute, private user: UserService) {
+  constructor(private actRouter: ActivatedRoute, private user: UserService,private route: Router) {
     this.actRouter.params.subscribe((data) => {
       this.userid=data.id;
       this.user.getsingleUser(this.userid).subscribe((data:any)=>{
-        this.userinfo=data.data;
-      });
+        this.userinfo=data;
+      },(error)=>{
+        if(error.status==404){
+          alert("User doest not exists");
+
+        }
+        })
     });
   }
 
   ngOnInit() {
   }
-
+  Update(name:string,age:number,salary:number){
+this.user.updateuser(this.userid,name,age,salary).subscribe((data)=>{
+  console.log(data);
+  this.route.navigate(['/User']);
+})
+  }
 }

@@ -1,10 +1,13 @@
 <h1>List of Users</h1>
-
+<img src="../../assets/loading.gif" *ngIf="loading" style="position: fixed;
+top: 40%;
+left: 24%;
+width: 364px;">
 <a routerLink="/User/AddUser">Add User</a>
 <table>
     <tr>
         <td>id</td>
-        <td>firstname</td>
+        <td>name</td>
         <td>lastname</td>
         <td>email</td>
         <td>profileimage</td>
@@ -12,10 +15,11 @@
     </tr>
     <tr *ngFor="let item of lstUser">
             <td>{{item.id  }}</td>
-            <td>{{item.first_name}}</td>
-            <td>{{item.last_name}}</td>
-            <td>{{item.email}}</td>
-            <td><img [src]="item.avatar"  style="width: 50px;"/></td>
+            <td>{{item.employee_name}}</td>
+            <td>{{item.employee_salary}}</td>
+            <td>{{item.employee_age}}</td>
+            <td><img *ngIf="item.profile_image!=''" [src]="item.profile_image"  style="width: 50px;"/></td>
             <td><a routerLink="/User/EditUser/{{item.id}}" >Edit</a></td>
+            <td><a (click)="Delete(item.id)" >Delete</a></td>
         </tr>
 </table>
