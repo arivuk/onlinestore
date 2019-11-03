@@ -4,16 +4,19 @@ top: 40%;
 left: 24%;
 width: 364px;">
 <a routerLink="/User/AddUser">Add User</a>
+<!-- Search: <input #search  (change)="filter(search.value)"/>  -->
+
+Search: <input [(ngModel)]="searchtext"/>  {{searchtext}}
 <table>
     <tr>
         <td>id</td>
-        <td>name</td>
-        <td>lastname</td>
-        <td>email</td>
+        <td><div (click)="sort('employee_name')">name</div></td>
+        <td (click)="sort('employee_salary')">salary</td>
+        <td>age</td>
         <td>profileimage</td>
         <td>Edit</td>
     </tr>
-    <tr *ngFor="let item of lstUser">
+    <tr *ngFor="let item of (lstUser | textfilter :'employee_name':searchtext)">
             <td>{{item.id  }}</td>
             <td>{{item.employee_name}}</td>
             <td>{{item.employee_salary}}</td>

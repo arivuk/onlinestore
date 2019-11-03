@@ -4,13 +4,15 @@ import { UserComponent } from '../user/user.component';
 import { UserRoutingModule } from './user-routing.module';
 import { AddUserComponent } from '../add-user/add-user.component';
 import { EditUserComponent } from '../edit-user/edit-user.component';
+import { FormsModule } from '@angular/forms';
+import { TextfilterPipe } from '../textfilter.pipe';
 
 
 
 @NgModule({
-  declarations: [ UserComponent, AddUserComponent, EditUserComponent ],
+  declarations: [ UserComponent, AddUserComponent, EditUserComponent,TextfilterPipe ],
   imports: [
-    CommonModule, UserRoutingModule
+    CommonModule, UserRoutingModule, FormsModule
   ]
 })
 export class UserInfoModule { }

@@ -1,1 +1,12 @@
-<p>add-user works!</p>
+<h1>Add User</h1>
+
+<p>Id:<input type="text" #id/>  </p>
+<p>
+name: <input type="text" #name  />
+</p><p>
+age: <input type="text" #age  />
+</p>
+<p>
+   salary: <input type="text" #salary />
+    </p>
+        <button (click)="AddEmployee(id.value,name.value,age.value,salary.value)">Add</button>

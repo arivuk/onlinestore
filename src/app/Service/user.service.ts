@@ -19,6 +19,9 @@ export class UserService {
   updateuser(id:number,name:string,age:number,salary:number){
     return this.http.put('http://dummy.restapiexample.com/api/v1/update/'+id,JSON.stringify({name:name,age:age,salary:salary}))
   }
+  Adduser(name:string,age:number,salary:number){
+    return this.http.post('http://dummy.restapiexample.com/api/v1/create',JSON.stringify({name:name,age:age,salary:salary}))
+  }
   Deleteuser(id:number){
     return this.http.delete('http://dummy.restapiexample.com/api/v1/delete/'+id)
   }

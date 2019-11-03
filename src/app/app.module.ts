@@ -12,6 +12,7 @@ import { StudentComponent } from './student/student.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { LoginComponent } from './login/login.component';
+import { TextfilterPipe } from './textfilter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
