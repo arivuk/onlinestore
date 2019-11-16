@@ -13,6 +13,10 @@ import { AddStudentComponent } from './add-student/add-student.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { LoginComponent } from './login/login.component';
 import { TextfilterPipe } from './textfilter.pipe';
+import { HighlightDirective } from './highlight.directive';
+import { GridExpressexComponent } from './grid-expressex/grid-expressex.component';
+import { DxDataGridModule } from 'devextreme-angular';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,10 +25,12 @@ import { TextfilterPipe } from './textfilter.pipe';
     StudentComponent,
     AddStudentComponent,
     EditStudentComponent,
-    LoginComponent  ],
+    LoginComponent,
+    HighlightDirective,
+    GridExpressexComponent  ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,HttpClientModule
+    AppRoutingModule,FormsModule,HttpClientModule, DxDataGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]
